@@ -17,7 +17,6 @@ namespace Ekz_Gorodkov_ElemBolshe_SrAr
         {
             Console.WriteLine("Задание: Вывести элементы массива, которые больше среднего арифметического");
             Console.WriteLine();
-
             Console.WriteLine("Введите размер массива");
             int n = int.Parse(Console.ReadLine());
             int[] mass = new int[n]; //Основной массив 
@@ -27,7 +26,6 @@ namespace Ekz_Gorodkov_ElemBolshe_SrAr
             Double sr; //хранит среднее арифметическое 
             Random rnd = new Random(); //Рандомные числа 
             int ch = rnd.Next(-100, 100); //Получение первого случ. числа 
-
             for (int i = 0; i < n; i++)//перебор массива 
             {
                 mass[i] = ch; //присвоение рандомных чисел массиву 
@@ -35,24 +33,20 @@ namespace Ekz_Gorodkov_ElemBolshe_SrAr
                 ch = rnd.Next(-100, 100); //получение следующего случ. числа 
                 Console.Write($"{mass[i]}  ");
             }
-
             sr = sum / n; //Среднее арифметическое 
             Console.WriteLine();
             Console.WriteLine();
             Console.WriteLine($"Среднее арифметическое: {sr}");
             Console.WriteLine();
             Console.WriteLine("Массив, элементы которого больше среднего арифметического: ");
-
             for (int i = 0; i < n; i++) //перебор массива 
             {
                 if (mass[i] > sr) //если значение больше чем среднее арифметическое 
                 {
                     elem[k] = mass[i]; //то значение сохраняется в другой массив 
                     k++;
-
                 }
             }
-
             for (int i = 0; i < k; i++) //перебор нового массива и вывод его в консоль 
             {
                 Console.Write($"{elem[i]}  ");
